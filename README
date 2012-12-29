@@ -8,6 +8,6 @@ Usage: shmup [-s] [-r] [-d dir]|less
 	-r repeat on, defaults to off
 	-d directory, defaults to ~/
 
-N.B. piping to less (or another pager)
-helps you close the player (first close
-the pager, then ^C the actualy command).
+There are many ways to close the player.
+The best one is, however, probably killing
+it. That's why it prints its PID.

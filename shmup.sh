@@ -6,9 +6,9 @@ play() {
 	for f in $DATA; do
 		echo "Now playing $f";
 		if [ "`echo $f|sed -e 's/.*\.mp3/mp3/'`" = "mp3" ]; then
-			mpg123 $f;
+			mpg123 $f 2>/dev/null;
 		else
-			ogg123 $f;
+			ogg123 $f 2>/dev/null;
 		fi
 	done
 }
@@ -33,6 +33,8 @@ while true; do
 	fi
 done
 
+clear
+echo "My PID is $$ (can be used for killing)"
 echo "About to play dir \`$DIR' w/ following options";
 if [ "$SHUF" = "false" ]; then
 	echo -e "\tshuffle off";
